@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+service RandomNumberService {
+    rpc Get(Empty) returns (stream Number) {};
+    rpc Post(stream Number) returns (Empty) {};
+}
+
+message Empty {}
+
+message Number {
+    required int32 numb = 1;
+}
